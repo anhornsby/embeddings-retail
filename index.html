@@ -10,6 +10,7 @@ Huge thanks to the following people for lending their diagrams:
 
 Embeddings - http://gpucomputing.shef.ac.uk/education/intro_dl_sharc_dgx1/lab06/
 word2vec - https://www.tensorflow.org/tutorials/word2vec
+King-Queen vectors - http://signaldatascience.com/projects/oliviaschaefer/
 
  -->
 
@@ -102,9 +103,9 @@ word2vec - https://www.tensorflow.org/tutorials/word2vec
 					<small>
 					<ol>
 						<br>
-						<span class="fragment"><li>Introduction to embeddings and "2vec" algorithms</li></span>
-						<span class="fragment"><li>Natural language vs. Retail transactions</li></span>
-						<span class="fragment"><li>Product, basket and customer embeddings</li></span>
+						<span class="fragment"><li>Why <b>item similarity</b> is so important in retail science</li></span>
+						<span class="fragment"><li>What are <b>embeddings</b>?</li></span>
+						<span class="fragment"><li>How <b>doc2vec</b> can help</li></span>
 						<span class="fragment"><li>Use cases</li></span><br><br>
 
 						<span class="fragment">(Massive thanks to <a href='https://www.linkedin.com/in/joshua-cooper-07b72953/'>Josh Cooper</a> for doing lots of the the thinking in this presentation)</span>
@@ -114,7 +115,7 @@ word2vec - https://www.tensorflow.org/tutorials/word2vec
 
 				<section data-background="#A31A7E">
 
-					<h1> Embeddings </h1>
+					<h1> Item similarity </h1>
 					<small>
 
 					</small>
@@ -148,15 +149,19 @@ word2vec - https://www.tensorflow.org/tutorials/word2vec
 					<br><br>
 					<span class="fragment">The <b>problem</b> with dummy coding</span><br><br>
 					<span class="fragment">Dummy coded data is <b>too sparse</b> (i.e. too many zeros)<br>
-					<span class="fragment">Any similarity measure will tell you that <i>cat food</i> and <i>dog food</i> are <b>totally unrelated</b></span><br><br>
+					<span class="fragment">Any similarity measure will tell you that <i>cat food</i> and <i>dog food</i> are <b>totally unrelated</b> using this approach</span><br><br>
 
 					<span class="fragment">We need a way to represent these items using <b>dense</b> vectors</span><br><br>
 
 					</small>
 				</section>
 
+				<section data-background="#E17000">
+					<h1> Embeddings </h1>
+				</section>
+
 				<section>
-					<h3> What are embeddings? </h3>
+					<h3> Embeddings are dense representations </h3>
 					<small>
 					<ul>
 							<img width=600 data-src="./images/embedding.png" style= "border-style: none; box-shadow: none">
@@ -166,9 +171,11 @@ word2vec - https://www.tensorflow.org/tutorials/word2vec
 					<span class="fragment">Traditionally used in <b>natural language processing (NLP)</b></span><br>
 					<span class="fragment">Learned <b>dense representations</b> of otherwise sparse data</span><br>
 
-					<span class="fragment">Typically learnt using <b>neural networks</b> (or related algorithms)</span><br><br>
+					<span class="fragment">Typically learnt with <b>neural networks</b></span><br><br>
 
-					<span class="fragment">When learned right, produce <b>similar vectors for similar entities</b> (e.g. cats vs. dogs)</span><br>
+					<span class="fragment">When learned right, produce <b>similar vectors for similar items</b> (e.g. cats vs. dogs)</span><br><br>
+
+					<span class="fragment"><a href="https://deeplearning4j.org/thoughtvectors">Geoff Hinton</a> has argued that all thoughts can be represented with embedding vectors</span><br><br>
 
 
 					</small>
@@ -182,20 +189,16 @@ word2vec - https://www.tensorflow.org/tutorials/word2vec
 					</ul>
 					<br><br>
 
-					<span class="fragment">A set of <b>unsupervised learning</b> algorithms that learn vector embeddings</span><br><br>
+					<span class="fragment">A set of <b>unsupervised learning</b> algorithms that learn vector embeddings (Mikolov et al.)</span><br><br>
 					<span class="fragment"><b>word2vec</b> used to learn vector embeddings for <b>words</b></span><br>
 					<span class="fragment"><b>doc2vec</b> used to learn vector embeddings for <b>documents</b> (e.g. sentences)</span><br><br>
 
-					<span class="fragment">Creates <b>lots of little classification problems</b> (e.g. use vector from one word to predict next word in sentence) </span><br>
-					<span class="fragment">Embedding vectors are then <b>trained using backpropagation</b> in each iteration </span><br><br>
+					<span class="fragment">Creates <b>lots of little classification problems</b> (e.g. use vector from one word to predict next word in sentence, then backprop) </span><br>
+<!-- 					<span class="fragment">Embedding vectors are then <b>trained using backpropagation</b> in each iteration </span><br><br> -->
 					<span class="fragment">Typically <b>very fast to train</b> thanks to multithreading and scales well to large data</span><br>
 
 					</small>
 				</section>
-
-<!-- 				<section data-background="#363534">
-					<h2> NLP with Transactions </h2>
-				</section> -->
 
 				<section>
 					<!-- Show how they're related -->
@@ -223,8 +226,36 @@ word2vec - https://www.tensorflow.org/tutorials/word2vec
 
 
  				<section data-background="#363534">
-					<h2> The result </h2>
+					<h1> The model </h1>
 				</section> 
+
+				<section>
+
+					<h3>The modelling problem</h3>
+					<small>
+					<ul>
+							<img width=300 data-src="./images/source.png" style= "border-style: none; box-shadow: none">
+					</ul>
+					<br><br>
+					<span class="fragment"><b>Aim:</b> Understand whether doc2vec can learn useful vector representations of products and baskets</span><br><br>
+					<span class="fragment">Model developed on <b>open-source transactional</b> dataset from <a href="https://www.dunnhumby.com/sourcefiles">dunnhumby source files</a></span><br>
+					<span class="fragment">2 years worth of transactions from <b>2500 households</b></span><br><br>
+
+					<span class="fragment">Using <a href="https://radimrehurek.com/gensim/">gensim</a> implementation of doc2vec (Python)</span><br>
+
+					<span class="fragment">Learn product and document vectors at same time</span>
+					<br><br>
+
+					<span class="fragment">Trained on GCP Compute Engine (4 vCPUs and 15GB memory) in (~10 minutes per experiment)</span><br>
+					<span class="fragment">Model solutions evaluated using Tensorflow's amazing <a href="https://github.com/tensorflow/embedding-projector-standalone">Embedding Explorer</a></span>
+
+				</small>
+
+				</section>
+
+				<section data-background="#B19B00">
+					<h1> Evaluation </h1>
+				</section>
 
 				<section data-background-video="./images/home2vec.mov" data-background-size="100px" data-background-video-loop data-background-repeat="repeat">
 				</section>
@@ -235,19 +266,155 @@ word2vec - https://www.tensorflow.org/tutorials/word2vec
 				<section data-background-video="./images/easter.mov" data-background-size="100px" data-background-video-loop data-background-repeat="repeat">
 				</section>
 
-				<section>
-					<h3>  </h3>
-
-				</section> 
-
-				<section data-background="#B19B00">
-					<h1> Section 3 </h1>
+				<section data-background-video="./images/basket.mov" data-background-size="100px" data-background-video-loop data-background-repeat="repeat">
 				</section>
 
+				<section>
+					<h3>Analogical reasoning</h3>
+					<small>
+					<ul>
+						<img width=500 data-src="./images/king.png" style= "border-style: none; box-shadow: none">
+					</ul><br><br>
 
-				<section data-background="#E17000">
+					<span class="fragment"><b>Semantic relationships between words</b> are typically preserved within embedding space</span><br><br>
+					<span class="fragment"><b>$King - Man + Woman = y$</b></span><br><br>
+					<span class="fragment">Vectors most similar to $y$ tend to be <b>related to "queen"</b></span><br><br>
+
+					<span class="fragment">What would be the equivalent using <b>product embeddings</b>?</span><br>
+					<!-- <span class="fragment">(The following examples have <b>not</b> been cherry picked!)</span> -->
+
+				</small>
+				</section> 
+
+
+				<section>
+					<small>
+						<h2>Identifying cheaper alternatives</h2>
+						<b>Premium Meat - Premium + Economy = ?</b><br>
+						<br>
+						<span class="fragment">
+					<table>
+						<thead>
+							<tr>
+								<th>Rank</th>
+								<th>Product description</th>
+								<th>Cosine similarity</th>
+								<!-- <th>Quantity</th> -->
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th>1</th>
+								<td>Economy meat</td>
+								<td>0.542439</td>
+								<!-- <td>7</td> -->
+							</tr>
+							<tr>
+								<th>2</th>
+								<td>Margarine stick</td>
+								<td>0.518072</td>
+								<!-- <td>18</td> -->
+							</tr>
+							<tr>
+								<th>3</th>
+								<td>Carrots (bagged)</td>
+								<td>0.500584</td>
+								<!-- <td>2</td> -->
+							</tr>
+							<tr>
+								<th>4</th>
+								<td>Chocolate milk</td>
+								<td>0.489882</td>
+								<!-- <td>2</td> -->
+							</tr>
+						</tbody>
+					</table>
+				</span>
+					<br>
+					<br>
+					<span class="fragment">The most similar product to the target vector is <b>economy meat</b>. Other items are also cheaper alternatives.</span><br>
+					<span class="fragment">Suggests that there is a <b>"price sensitivity"</b> direction within the space</span>
+				</small>
+				</section>
+
+				<section>
+					<small>
+						<h2>Identifying vegetarian alternatives</h2>
+						<b>Frozen Burgers - Beef + Tofu = ?</b><br><br>
+						<span class="fragment">
+					<table>
+						<thead>
+							<tr>
+								<th>Rank</th>
+								<th>Product description</th>
+								<th>Cosine similarity</th>
+								<!-- <th>Quantity</th> -->
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th>1</th>
+								<td>Frozen entrees</td>
+								<td>0.518292</td>
+								<!-- <td>7</td> -->
+							</tr>
+							<tr>
+								<th>2</th>
+								<td>Frozen meat (vegetarian)</td>
+								<td>0.484718</td>
+								<!-- <td>18</td> -->
+							</tr>
+							<tr>
+								<th>3</th>
+								<td>Frozen meal combo/dinners</td>
+								<td>0.464290</td>
+								<!-- <td>2</td> -->
+							</tr>
+							<tr>
+								<th>4</th>
+								<td>Eggs</td>
+								<td>0.462903</td>
+								<!-- <td>2</td> -->
+							</tr>
+						</tbody>
+					</table>
+				</span>
+					<br>
+					<br>
+					<span class="fragment">The most similar products to the target vector tend to be <b>frozen and/or meat free</b></span><br>
+					<span class="fragment">Suggests there are <b>"frozen"</b> and <b>"vegetarian"</b> directions within the embedding space</span>
+				</small>
+				</section>
+
+				<section data-background="#009B74">
+					<h1>Conclusions</h1>
+				</section>
+
+				<section>
+					<h3>The model looks great</h3>
+					<br>
+					<video loop data-autoplay src="./images/showcase.mov" width=600></video><br><br>
+					<small>
+						<span class="fragment">+ Very <b>visual</b> application of machine learning in retail</span><br>
+					<span class="fragment">+ The model appears to <b>understand product similarity</b> well</span><br>
+					<span class="fragment">+ <b>Analogical reasoning</b> results seem intuitive</span><br>
+					<span class="fragment">+ <b>Scales</b> better than rival algorithms (e.g. NMF)</span><br><br>
+
+					<span class="fragment">- Need some more <b>automated</b> ways of <b>evaluating</b> the model</span><br>
+					<span class="fragment">- Need <b>less homogenous</b> way of representing baskets & customers</span><br>
+
+				    </small>
+
+				</section>
+
+				<section  data-background="#363534">
 					<h1> Thank You </h1>
-					<small>Adam Hornsby (adam.hornsby@dunnhumby.com)</small>
+					<small>@adamnhornsby <br>
+						adam.hornsby@dunnhumby.com<br><br>
+
+
+					<b>dunnhumby.com/careers</b>
+					</small>
 				</section>
 
 
