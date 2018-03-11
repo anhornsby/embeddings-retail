@@ -44,7 +44,7 @@ King-Queen vectors - http://signaldatascience.com/projects/oliviaschaefer/
         z-index: 1;
         width: 200px;
         background-size: cover;
-        height: 30px"><font face="arial" size="2" color="#363534">&copy; dunnhumby 2017</font></div>
+        height: 30px"><font face="arial" size="2" color="#363534">&copy; dunnhumby 2018</font></div>
 
 <!-- 		<div style="
         position: relative;
@@ -98,14 +98,13 @@ King-Queen vectors - http://signaldatascience.com/projects/oliviaschaefer/
 					</small>
 				</section>
 
-				<section>
-					<!-- <h3> About dunnhumby </h3> -->
+<!-- 				<section>
 					<small>
 					<ul>
 							<img width=800 data-src="./images/what.png" style= "border-style: none; box-shadow: none">
 					</ul>
 					</small>
-				</section>
+				</section> -->
 
 				<section>
 					<h3> Today </h3>
@@ -115,7 +114,7 @@ King-Queen vectors - http://signaldatascience.com/projects/oliviaschaefer/
 						<span class="fragment"><li>Why <b>item similarity</b> is so important in retail science</li></span>
 						<span class="fragment"><li>What are <b>embeddings</b>?</li></span>
 						<span class="fragment"><li>How <b>doc2vec</b> can help</li></span>
-						<span class="fragment"><li>Use cases</li></span><br><br>
+						<span class="fragment"><li>Conclusions</li></span><br><br>
 
 						<span class="fragment">(Massive thanks to <a href='https://www.linkedin.com/in/joshua-cooper-07b72953/'>Josh Cooper</a> for doing lots of the the thinking in this presentation)</span>
 					</ol>
@@ -184,14 +183,14 @@ King-Queen vectors - http://signaldatascience.com/projects/oliviaschaefer/
 
 					<span class="fragment">When learned well, produce <b>similar vectors for similar items</b> (e.g. cats vs. dogs)</span><br><br>
 
-					<span class="fragment"><a href="https://deeplearning4j.org/thoughtvectors">Geoff Hinton</a> has argued that all thoughts can be represented with embedding vectors</span><br><br>
+					<span class="fragment"><a href="https://deeplearning4j.org/thoughtvectors">Geoff Hinton</a> has argued that <b>all thoughts can be represented</b> with embedding vectors</span><br><br>
 
 
 					</small>
 				</section>
 
 				<section>
-					<h3> 2vec Algorithms </h3>
+					<h3> *2vec Algorithms </h3>
 					<small>
 					<ul>
 							<img width=400 data-src="./images/word2vec.png" style= "border-style: none; box-shadow: none">
@@ -202,9 +201,9 @@ King-Queen vectors - http://signaldatascience.com/projects/oliviaschaefer/
 					<span class="fragment"><b>word2vec</b> used to learn vector embeddings for <b>words</b></span><br>
 					<span class="fragment"><b>doc2vec</b> used to learn vector embeddings for <b>documents</b> (e.g. sentences)</span><br><br>
 
-					<span class="fragment">Creates <b>lots of little classification problems</b> (e.g. use vector from one word to predict next word in sentence, then backprop) </span><br>
+					<span class="fragment">Create <b>lots of little classification problems</b> (e.g. use vector from one word to predict next word in sentence, then backprop) </span><br>
 <!-- 					<span class="fragment">Embedding vectors are then <b>trained using backpropagation</b> in each iteration </span><br><br> -->
-					<span class="fragment">Typically <b>very fast to train</b> thanks to multithreading and scales well to large data</span><br>
+					<span class="fragment">Typically <b>very fast to train</b> and scale well to large data</span><br>
 
 					</small>
 				</section>
@@ -220,9 +219,10 @@ King-Queen vectors - http://signaldatascience.com/projects/oliviaschaefer/
 
 					<span class="fragment">NLP algorithms (like doc2vec) assume that you have <b>words (i.e. items) and sentences (i.e. documents)</b></span><br><br>
 
-					<span class="fragment"><b>Products</b> are analogous to words and <b>baskets</b> are analogous to sentences</span><br>
+					<span class="fragment"><b>Products</b> are analogous to words and <b>baskets/customers</b> are analogous to sentences</span><br>
+					<span class="fragment">This data is a <b>neat place to test NLP algorithms</b> (e.g. no order, "stop words" and arguably more natural)</span><br><br>
 
-					<span class="fragment">(e.g. A basket can be represented as a vector of product codes or descriptions)</span><br><br>
+					<span class="fragment">e.g. A basket can be represented as a vector of product codes or descriptions</span><br>
 
 					</small>
 					<span class="fragment">
@@ -230,7 +230,9 @@ King-Queen vectors - http://signaldatascience.com/projects/oliviaschaefer/
 ["Rice crispies", "Tomato ketchup", "Peanut butter"]
 </code>
 </pre>
+					
 </span>	
+				
 				</section>
 
 
@@ -246,7 +248,7 @@ King-Queen vectors - http://signaldatascience.com/projects/oliviaschaefer/
 							<img width=300 data-src="./images/source.png" style= "border-style: none; box-shadow: none">
 					</ul>
 					<br><br>
-					<span class="fragment"><b>Aim:</b> Understand whether doc2vec can learn useful vector representations of products and baskets</span><br><br>
+					<span class="fragment"><b>Aim:</b> Understand whether doc2vec can learn <b>useful</b> vector representations of products and baskets</span><br><br>
 					<span class="fragment">Model developed on <b>open-source transactional</b> dataset from <a href="https://www.dunnhumby.com/sourcefiles">dunnhumby source files</a></span><br>
 					<span class="fragment">2 years worth of transactions from <b>2500 households</b></span><br><br>
 
@@ -401,9 +403,10 @@ King-Queen vectors - http://signaldatascience.com/projects/oliviaschaefer/
 
 				<section>
 					<h3>The model looks great</h3>
-					<br>
-					<video loop data-autoplay src="./images/showcase.mov" width=600></video><br><br>
+					<!-- <br> -->
+					<video loop data-autoplay src="./images/showcase.mov" width=600></video><br>
 					<small>
+						<br>
 						<span class="fragment">+ Very <b>visual</b> application of machine learning in retail</span><br>
 					<span class="fragment">+ The model appears to <b>understand product similarity</b> well</span><br>
 					<span class="fragment">+ <b>Analogical reasoning</b> results seem intuitive</span><br>
@@ -411,6 +414,28 @@ King-Queen vectors - http://signaldatascience.com/projects/oliviaschaefer/
 
 					<span class="fragment">- Need some more <b>automated</b> ways of <b>evaluating</b> the model</span><br>
 					<span class="fragment">- Need <b>less homogenous</b> way of representing baskets & customers</span><br>
+					<span class="fragment">- <b>Interpretation of "similar"</b> is slightly unusual (neither comps nor subs)</span><br>
+
+				    </small>
+
+				</section>
+
+				<section>
+					<h3>This model has many applications</h3>
+					<small>
+					<ul>
+						<img width=800 data-src="./images/choice.png" style= "border-style: none; box-shadow: none">
+					</ul>
+					<br>
+
+					<span class="fragment"><b>Global deployment</b> of model in collaboration with partners</span><br><br>
+
+					<span class="fragment"><b>Ultra-fast deployment</b> of basket and customer <b>segmentations</b> with new clients</span><br>
+					<span class="fragment">Exploring use of model to suggest <b>alternative & supplementary</b> products in ranges during <b>store ranging</b></span><br>
+					<span class="fragment">Exploring power of new features in <b>personalised recommender systems</b></span><br><br>
+
+					<span class="fragment">A <b>significat leap forward</b> in the endeavour to describe <b>similarity</b></span>
+					
 
 				    </small>
 
