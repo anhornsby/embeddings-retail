@@ -1,0 +1,747 @@
+
+
+
+.rcorners_blue {
+    border-radius: 5px 5px 5px 5px;
+    /*background: #363534;*/
+    border-width: 2px;
+    border-style: solid;
+    border-color: #73706E;
+    padding: 20px; 
+    width: 200px;
+    height: 200px; 
+    transition: all .25s ease;
+}
+
+
+
+#rcorners_green {
+    border-radius: 0px 50px 0px 50px;
+    /*background: #8AC007;*/
+    border-style: solid;
+    border-color: #009B74;
+
+    padding: 20px; 
+    width: 200px;
+    height: 200px; 
+}
+
+#rcorners_orange {
+    border-radius: 0px 50px 0px 50px;
+    background: #363534;
+    border-style: solid;
+    border-color: #E17000;
+
+    padding: 20px; 
+    width: 200px;
+    height: 200px; 
+}
+ 
+.spacer{
+    height: 15px;
+}
+/*ANIMATIONS*/
+.innovation:hover
+{
+    -webkit-animation:spin 6s linear infinite;
+    -moz-animation:spin 6s linear infinite;
+    animation:spin 6s linear infinite;
+}
+
+
+.idea:hover
+{
+    animation-name: stylie-transform2-keyframes;
+    animation-duration: 100ms;
+    animation-delay: 0ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    /*transform-origin: 0 0;*/
+}
+
+.rocket, .clock
+{
+        top:0;
+        left:0;
+        position:absolute;
+        height: 80px;
+}
+
+.rocket:hover
+{
+        opacity:0;
+        transition: opacity 0.4s ease 0.2s;
+        animation-name: stylie-transform-keyframes;
+        animation-duration: 700ms;
+        animation-delay: 0ms;
+        animation-fill-mode: forwards;
+        animation-timing-function: linear;
+        animation-iteration-count: 1;
+        transform-origin: 0 0;
+}
+
+
+.clock:hover
+{
+        animation-name: stylie-transform2-keyframes;
+        animation-duration: 100ms;
+        animation-delay: 0ms;
+        animation-fill-mode: forwards;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        transform-origin: 0 0;
+}
+
+a:hover .shake{
+    -webkit-animation-name: spaceboots;
+    -webkit-animation-duration: 1.0s;
+    -webkit-transform-origin:50% 50%;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+}
+.shake {
+    display:inline-block
+}
+.shake_perm{
+    -webkit-animation-name: spaceboots;
+    -webkit-animation-duration: 1.0s;
+    -webkit-transform-origin:50% 50%;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    display:inline-block;
+}
+
+
+a:hover .grow {
+    -webkit-animation-name: growingeffect;
+    -webkit-animation-duration: 1.5s;
+    -webkit-transform-origin:50% 50%;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+}
+.grow {
+    display:inline-block
+}
+
+/* KEYFRAMES */
+@keyframes stylie-transform-keyframes {
+  0% {transform:translateX(30px) translateY(46px) rotate(0deg) translate(-50%, -50%);animation-timing-function: cubic-bezier(.25,.25,.75,.75);}
+  100% {transform:translateX(260px) translateY(-150px) rotate(0deg) translate(-50%, -50%);}
+}
+
+@keyframes stylie-transform2-keyframes {
+  0% {transform:translateX(40px) translateY(40px) rotate(0deg) translate(-50%, -50%);animation-timing-function: cubic-bezier(.25,.25,.75,.75);}
+  100% {transform:translateX(50px) translateY(40px) rotate(0deg) translate(-50%, -50%);}
+}
+
+
+/* ROTATION EFFECT */
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+/* SHAKE EFFECT */
+@-webkit-keyframes spaceboots {
+    0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
+    10% { -webkit-transform: translate(-
+1px, -2px) rotate(-1deg); }
+    20% { -webkit-transform: translate(-3px, 0px) rotate(1deg); }
+    30% { -webkit-transform: translate(0px, 2px) rotate(0deg); }
+    40% { -webkit-transform: translate(1px, -1px) rotate(1deg); }
+    50% { -webkit-transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { -webkit-transform: translate(-3px, 1px) rotate(0deg); }
+    70% { -webkit-transform: translate(2px, 1px) rotate(-1deg); }
+    80% { -webkit-transform: translate(-1px, -1px) rotate(1deg); }
+    90% { -webkit-transform: translate(2px, 2px) rotate(0deg); }
+    100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+
+
+@-moz-keyframes spaceboots {
+    0% { -moz-transform: translate(2px, 1px) rotate(0deg); }
+    10% { -moz-transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { -moz-transform: translate(-3px, 0px) rotate(1deg); }
+    30% { -moz-transform: translate(0px, 2px) rotate(0deg); }
+    40% { -moz-transform: translate(1px, -1px) rotate(1deg); }
+    50% { -moz-transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { -moz-transform: translate(-3px, 1px) rotate(0deg); }
+    70% { -moz-transform: translate(2px, 1px) rotate(-1deg); }
+    80% { -moz-transform: translate(-1px, -1px) rotate(1deg); }
+    90% { -moz-transform: translate(2px, 2px) rotate(0deg); }
+    100% { -moz-transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+@keyframes spaceboots {
+    0% { transform: translate(2px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(0px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(2px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(2px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+
+
+/* GROWING EFFECT */
+@-webkit-keyframes growingeffect {
+    0% { -webkit-transform: scale(1.0); }
+    10% { -webkit-transform: scale(1.05); }
+    20% { -webkit-transform: scale(1.1); }
+    30% { -webkit-transform: scale(1.15); }
+    40% { -webkit-transform: scale(1.1); }
+    50% { -webkit-transform: scale(1.05); }
+    60% { -webkit-transform: scale(1.0); }
+    70% { -webkit-transform: scale(0.95); }
+    80% { -webkit-transform: scale(0.9); }
+    90% { -webkit-transform: scale(0.95); }
+    100% { -webkit-transform: scale(1.0); }
+}
+
+/* GROWING EFFECT */
+@-moz-keyframes growingeffect {
+    0% { -moz-transform: scale(1.0); }
+    10% { -moz-transform: scale(1.05); }
+    20% { -moz-transform: scale(1.1); }
+    30% { -moz-transform: scale(1.15); }
+    40% { -moz-transform: scale(1.1); }
+    50% { -moz-transform: scale(1.05); }
+    60% { -moz-transform: scale(1.0); }
+    70% { -moz-transform: scale(0.95); }
+    80% { -moz-transform: scale(0.9); }
+    90% { -moz-transform: scale(0.95); }
+    100% { -moz-transform: scale(1.0); }
+}
+
+/* GROWING EFFECT */
+
+@keyframes growingeffect {
+    0% { transform: scale(1.0); }
+    10% { transform: scale(1.025); }
+    20% { transform: scale(1.05); }
+    30% { transform: scale(1.075); }
+    40% { transform: scale(1.05); }
+    50% { transform: scale(1.025); }
+    60% { transform: scale(1.0); }
+    70% { transform: scale(0.975); }
+    80% { transform: scale(0.95); }
+    90% { transform: scale(0.975); }
+    100% { transform: scale(1.0); }
+}
+
+
+@media (min-width: 1200px) {
+  .container {
+    /*width: 1170px;*/
+     width: 80%;
+  }
+}
+
+
+/* Center the slideshow */
+.container1
+{
+        /*Width of the slideshow*/
+        /*width:100%;*/
+        /*max-width:900px;*/
+/**/
+        /*Margin - Shorthand property:
+            top and bottom margins are 0 (there is already a bottom in the header)
+            right and left margins are auto;*/
+        /*margin: 0px auto;*/
+        text-align: center;
+        /*position:relative;*/
+        /*border:1px solid red;*/
+        /*color: black;*/
+        /*width:auto;*/
+        /*max-width:100%;*/
+
+        margin: 0px auto 0px auto;
+        /*padding:40px 0 40px 0;*/
+        /*border: 1px solid red;*/
+        /*border-top: 1px solid #D6D0C1;*/
+        /*border-bottom: 1px solid #D6D0C1;*/
+}
+
+
+.content
+{
+
+    display: inline-table;
+    /*width:250px;*/
+    /*margin-left: 20px;*/
+    /*margin-right: 20px;*/
+    /*border:1px solid black;*/
+    text-align: left;
+
+        width:30%;
+        max-width:350px;
+        height:200px;
+        margin:0 0 0 auto;
+        padding:20px 20px 0px 20px;
+        /*margin-right:45px;*/
+        /*margin-left: 30px;*/
+        font-size:14px;
+        border-radius:5px;
+        border: 1.5px solid;
+        border-color:  #A9A9A9; 
+        transition: all .25s ease;
+
+}
+
+.content2
+{
+    display: inline-table;
+    /*width:250px;*/
+    /*margin-left: 20px;*/
+    /*margin-right: 20px;*/
+    /*border:1px solid black;*/
+    text-align: left;
+
+        width:30%;
+        max-width: 350px;
+        height:200px;
+        margin:0 auto;
+        padding:20px;
+        /*margin-right:45px;*/
+        /*margin-left: 30px;*/
+        margin:0 3%;
+        font-size:14px;
+        border-radius:5px;
+        border: 1.5px solid;
+        border-color:  #A9A9A9; 
+        /*transition: all .25s ease;*/
+
+}
+
+.content3
+{
+    display: inline-table;
+    /*width:250px;*/
+    /*margin-left: 20px;*/
+    /*margin-right: 20px;*/
+    /*border:1px solid black;*/
+    text-align: left;
+
+        width:30%;
+        max-width:350px;
+        height:200px;
+        margin:0 auto 0 0;
+        padding:20px;
+        /*margin-right:45px;*/
+        /*margin-left: 30px;*/
+        font-size:14px;
+        border-radius:5px;
+        /*border: 3px solid white;*/
+        border: 1.5px solid;
+        border-color:  #A9A9A9; 
+        /*transition: all .25s ease;*/
+
+}
+
+
+.content:hover,.content2:hover, .content3:hover
+{
+        /*background-image: linear-gradient(bottom, #E56038 0%, #ff8c66 100%);*/
+        /*background-image: linear-gradient(to bottom, white 0%, #D1E391 150%);*/
+        /*background-color: #D9D9D9;*/
+        /*background-color: #42A8C1;*/
+        /*background-color: #9D9C9C;*/
+        /*opacity: 0.2;*/
+        /*color: #EBE8DE;*/
+        /*text-shadow: 1px 1px 0px #ff8155;*/
+        /*text-decoration:none;*/
+        /*border-radius:5px;*/
+        /*border-color: red;*/
+        border: 1.5px solid;
+        border-color:  #363534; 
+        /*box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.3);*/
+        /*background-color: #AD310B;*/
+        -webkit-transition: background-color 100ms linear;
+        -moz-transition: background-color 100ms linear;
+        -o-transition: background-color 100ms linear;
+        -ms-transition: background-color 100ms linear;
+        transition: background-color 100ms linear;
+}
+
+.content h3,.content2 h3, .content3 h3
+{
+        /*font-family: 'Open Sans', sans-serif;*/
+        font-size:20px;
+        margin-bottom:10px;
+        margin-left:75px;
+}
+
+.content img, .content2 img, .content3 img
+{
+        float:left;
+}
+
+.content p, .content2 p, .content3 p
+{
+        line-height:25px;
+        /*font-family:  'Open Sans', sans-serif;*/
+        margin-left:75px;
+        /*color: #333333;*/
+        color: #363534 ;
+        /*color: #e56038; Color orange*/
+        /*font-weight: bold;*/
+        
+}
+
+
+/*ANIMATIONS*/
+
+/*http://stackoverflow.com/questions/4502633/how-to-affect-other-elements-when-a-div-is-hovered*/
+/*.content2:hover .innovation
+{
+    -webkit-animation:spin 6s linear infinite;
+    -moz-animation:spin 6s linear infinite;
+    animation:spin 6s linear infinite;
+}
+
+.idea:hover
+{
+    -webkit-animation-name: stylie-transform2-keyframes;
+    -webkit-animation-duration: 100ms;
+    -webkit-animation-delay: 0ms;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+
+
+}
+
+.rocket, .clock
+{
+        top:0;
+        left:0;
+        position:absolute;
+        height: 80px;
+}
+
+.rocket:hover
+{
+        opacity:0;
+        transition: opacity 0.4s ease 0.2s;
+        animation-name: stylie-transform-keyframes;
+        animation-duration: 700ms;
+        animation-delay: 0ms;
+        animation-fill-mode: forwards;
+        animation-timing-function: linear;
+        animation-iteration-count: 1;
+        transform-origin: 0 0;
+}
+
+.clock:hover
+{
+        animation-name: stylie-transform2-keyframes;
+        animation-duration: 100ms;
+        animation-delay: 0ms;
+        animation-fill-mode: forwards;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        transform-origin: 0 0;
+}
+
+.content3:hover .shake {
+    -webkit-animation-name: spaceboots;
+    -webkit-animation-duration: 1.0s;
+    -webkit-transform-origin:50% 50%;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+
+    -moz-animation-name: spaceboots;
+    -moz-animation-duration: 1.0s;
+    -moz-transform-origin:50% 50%;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+
+   animation-name: spaceboots;
+   animation-duration: 1.0s;
+    transform-origin:50% 50%;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+/*.shake {
+    display:inline-block
+}*/
+
+/*.content:hover .grow{
+    -webkit-animation-name: growingeffect;
+    -webkit-animation-duration: 1.5s;
+    -webkit-transform-origin:50% 50%;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+
+    -moz-animation-name: growingeffect;
+    -moz-animation-duration: 1.5s;
+    -moz-transform-origin:50% 50%;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+
+    animation-name: growingeffect;
+    animation-duration: 1.5s;
+    transform-origin:50% 50%;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.grow {
+    display:inline-block
+}
+*/
+
+
+
+/*********************************************
+ * IMAGES
+ *********************************************/
+.reveal section img {
+  margin: 15px 0px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 2px solid white;
+  box-shadow: 0 0 1000px rgba(0, 0, 0, 0.15); }
+
+.reveal section img.plain {
+  border: 0;
+  box-shadow: none; }
+
+.reveal a img {
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  transition: all 0.5s linear; }
+
+.reveal a:hover img {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #E17000;
+  box-shadow: 0 0 00px rgba(0, 0, 0, 0.2); }
+
+
+.highlight-fushia {
+  color: #A31A7E; 
+}
+
+.highlight-green {
+  color: #009B74; 
+}
+
+.highlight-orange {
+  color: #E17000; 
+}
+
+.highlight-sage {
+  color: #B19B00; 
+}
+
+.highlight-white {
+  color: white;
+  opacity: 0.; 
+}
+
+
+p.fushia {
+    color: #A31A7E;
+}
+
+p.green {
+    color: #009B74;
+}
+
+p.orange {
+    color: #E17000;
+}
+
+p.sage {
+    color: #B19B00;
+}
+
+
+/*********************************************
+ * LINKS
+ *********************************************/
+a.page1{
+  color: #A31A7E;
+  text-decoration: none;
+  -webkit-transition: color 0.15s ease;
+  -moz-transition: color 0.15s ease;
+  transition: color 0.15s ease; 
+  opacity: 0.9;
+}
+
+a:hover.page1{
+  color: #A31A7E;
+  text-shadow: none;
+  border: none; 
+  opacity: 0.7;
+  }
+
+
+
+h1.fin {
+    font-family: "lucida calligraphy";
+}
+
+
+ /*********************************************/
+@keyframes growingeffect_word {
+    0% { transform: scale(1.0); }
+    100% { transform: scale(1.075); }
+}
+
+@keyframes growingeffect_word_small {
+    0% { transform: scale(1.0); }
+    100% { transform: scale(1.03); }
+}
+
+ /*********************************************/
+.highlight-orange-grow {
+  color: #E17000; 
+}
+
+.highlight-orange-grow:hover {
+    -webkit-animation-name: growingeffect_word;
+    -webkit-animation-duration: .15s;
+    -webkit-transform-origin:0% 0%;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-fill-mode: forwards;
+}
+ /*********************************************/
+
+
+ /*********************************************/
+.highlight-fushia-grow {
+  color: #A31A7E; 
+}
+
+.highlight-fushia-grow:hover {
+    -webkit-animation-name: growingeffect_word;
+    -webkit-animation-duration: .15s;
+    -webkit-transform-origin:0% 0%;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-fill-mode: forwards;
+}
+ /*********************************************/
+
+
+ /*********************************************/
+.highlight-green-grow {
+  color: #009B74; 
+}
+
+.highlight-green-grow:hover {
+    -webkit-animation-name: growingeffect_word;
+    -webkit-animation-duration: .15s;
+    -webkit-transform-origin:0% 0%;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-fill-mode: forwards;
+}
+
+ /*********************************************/
+
+ /*********************************************/
+.highlight-red-grow {
+  color: red; 
+}
+
+.highlight-red-grow:hover {
+    -webkit-animation-name: growingeffect_word;
+    -webkit-animation-duration: .15s;
+    -webkit-transform-origin:0% 0%;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-fill-mode: forwards;
+}
+ /*********************************************/
+
+
+
+ /*********************************************/
+.highlight-sage-grow {
+  color: #B19B00; 
+}
+
+.highlight-sage-grow:hover {
+    -webkit-animation-name: growingeffect_word;
+    -webkit-animation-duration: .15s;
+    -webkit-transform-origin:0% 0%;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-fill-mode: forwards;
+}
+ /*********************************************/
+
+
+ /********************************************FOR TABLES*/
+.highlight-green-grow-tb {
+  color: #009B74;
+  border-color: black;
+}
+
+.highlight-green-grow-tb:hover {
+    -webkit-animation-name: growingeffect_word_small;
+    -webkit-animation-duration: .15s;
+    -webkit-transform-origin:0% 0%;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-fill-mode: forwards;
+}
+
+ /*********************************************/
+
+ /********************************************FOR TABLES*/
+.highlight-red-grow-tb {
+  color: red; 
+  border-color: black;
+}
+
+.highlight-red-grow-tb:hover {
+    -webkit-animation-name: growingeffect_word_small;
+    -webkit-animation-duration: .15s;
+    -webkit-transform-origin:0% 0%;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-fill-mode: forwards;
+}
+ /*********************************************/
+
+
+
+p.fushia {
+    color: #A31A7E;
+}
+
+p.green {
+    color: #009B74;
+}
+
+p.orange {
+    color: #E17000;
+}
+
+p.sage {
+    color: #B19B00;
+}
+
+
+.reveal section table tbody{
+    font-size: 25px;
+}
+
+.reveal section table tbody tr td{
+    border-color: black;
+}
+
+
+/*.reveal h1 {
+    color:#AA0000;
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 20px 20px rgba(0, 0, 0, 0.15); }
+*/

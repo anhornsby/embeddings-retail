@@ -1,0 +1,316 @@
+<!doctype html>
+<!-- 
+Reveal Presentation
+internal dunnhumby training (not for public release)
+Created by Adam Hornsby
+-->
+
+<!-- 
+Huge thanks to the following people for lending their diagrams:
+
+Embeddings - http://gpucomputing.shef.ac.uk/education/intro_dl_sharc_dgx1/lab06/
+word2vec - https://www.tensorflow.org/tutorials/word2vec
+
+ -->
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Product Embeddings - Adam Hornsby</title>
+
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css">
+		<link rel="stylesheet" href="css/vampiriser/vampiriser.css">
+
+		<!-- dh Logo Watermark -->
+		<div id="myLogo" style="background: url(./images/dh_logo2.png);
+        position: absolute;
+        bottom: 50px;
+        right: 150px;
+        z-index: 1;
+        width: 120px;
+        background-size: cover;
+        height: 30px"></div>
+
+		<div id="cp" style="
+        position: absolute;
+        bottom: 48px;
+        right: 1400px;
+        z-index: 1;"><font face="arial" size="2" color="#363534">&copy; dunnhumby 2017 | confidential</font></div>
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section data-background="#009B74">
+					<h3> Understanding customers better through neural network embeddings </h3>
+					<small>
+						Adam Hornsby <br>
+						(adam.hornsby@dunnhumby.com)
+					</small>
+				</section>
+
+				<section>
+					<h3> About Me </h3>
+					<small>
+					<ul>
+						<br>
+						<span class="fragment"><li>Senior Data Scientist @ dunnhumby</li></span>
+						<span class="fragment"><li>4.5 years</li></span>
+						<span class="fragment"><li>Experimental Psychology, PhD Student @ UCL (part-time)</li></span>
+						<span class="fragment"><li>Researching consumer decision-making through experiments, big-data and modelling</li></span>
+					</ul>
+					</small>
+				</section>
+
+				<section>
+					<!-- <h3> About dunnhumby </h3> -->
+					<small>
+					<ul>
+							<img width=800 data-src="./images/global.png" style= "border-style: none; box-shadow: none">
+					</ul>
+					</small>
+				</section>
+
+				<section>
+					<!-- <h3> About dunnhumby </h3> -->
+					<small>
+					<ul>
+							<img width=800 data-src="./images/what.png" style= "border-style: none; box-shadow: none">
+					</ul>
+					</small>
+				</section>
+
+				<section>
+					<h3> Today </h3>
+					<small>
+					<ol>
+						<br>
+						<span class="fragment"><li>Introduction to embeddings and "2vec" algorithms</li></span>
+						<span class="fragment"><li>Natural language vs. Retail transactions</li></span>
+						<span class="fragment"><li>Product, basket and customer embeddings</li></span>
+						<span class="fragment"><li>Use cases</li></span><br><br>
+
+						<span class="fragment">(Massive thanks to <a href='https://www.linkedin.com/in/joshua-cooper-07b72953/'>Josh Cooper</a> for doing lots of the the thinking in this presentation)</span>
+					</ol>
+					</small>
+				</section>
+
+				<section data-background="#A31A7E">
+
+					<h1> Embeddings </h1>
+					<small>
+
+					</small>
+				</section>
+
+				<section>
+					<h3> How similar are these two products? </h3>
+					<small>
+					<ul>
+							<img width=200 data-src="./images/cat.jpg" style= "border-style: none; box-shadow: none"><img width=200 data-src="./images/dog.jpg" style= "border-style: none; box-shadow: none">
+					</ul>
+					<br><br>
+					<!-- <span class="fragment">How similar are these products?</span><br><br> -->
+					<span class="fragment">Questions of similarity are <b>everywhere in retail:</b></span><br><br>
+					<span class="fragment">"Your selected product X <b>goes well with</b> product Y" (i.e. product complementarity)</span><br>
+					<span class="fragment">"Your product X <b>was not available, so how about alternative</b> Y?" (i.e. product substitutability)</span><br>
+					<span class="fragment">"<b>Products of this type</b> tend to be placed together on the shelf" (i.e. product similarity)</span><br>
+					<span class="fragment">"<b>Customers like you</b> also tend to buy Y" (i.e. customer similarity)</span><br><br>
+
+					<span class="fragment">Solving similarity is a <b>huge goal for data scientists</b> working to improve; recommendations, ranging, pricing, assortment and more</span><br><br>
+
+					</small>
+				</section>
+
+				<section>
+					<h5> Traditional methods don't help with similarity </h5>
+					<small>
+					<ul>
+							<img width=400 data-src="./images/onehotencode.png" style= "border-style: none; box-shadow: none">
+					</ul>
+					<br><br>
+					<span class="fragment">The <b>problem</b> with dummy coding</span><br><br>
+					<span class="fragment">Dummy coded data is <b>too sparse</b> (i.e. too many zeros)<br>
+					<span class="fragment">Any similarity measure will tell you that <i>cat food</i> and <i>dog food</i> are <b>totally unrelated</b></span><br><br>
+
+					<span class="fragment">We need a way to represent these items using <b>dense</b> vectors</span><br><br>
+
+					</small>
+				</section>
+
+				<section>
+					<h3> What are embeddings? </h3>
+					<small>
+					<ul>
+							<img width=600 data-src="./images/embedding.png" style= "border-style: none; box-shadow: none">
+					</ul>
+					<br>
+
+					<span class="fragment">Traditionally used in <b>natural language processing (NLP)</b></span><br>
+					<span class="fragment">Learned <b>dense representations</b> of otherwise sparse data</span><br>
+
+					<span class="fragment">Typically learnt using <b>neural networks</b> (or related algorithms)</span><br><br>
+
+					<span class="fragment">When learned right, produce <b>similar vectors for similar entities</b> (e.g. cats vs. dogs)</span><br>
+
+
+					</small>
+				</section>
+
+				<section>
+					<h3> 2vec Algorithms </h3>
+					<small>
+					<ul>
+							<img width=400 data-src="./images/word2vec.png" style= "border-style: none; box-shadow: none">
+					</ul>
+					<br><br>
+
+					<span class="fragment">A set of <b>unsupervised learning</b> algorithms that learn vector embeddings</span><br><br>
+					<span class="fragment"><b>word2vec</b> used to learn vector embeddings for <b>words</b></span><br>
+					<span class="fragment"><b>doc2vec</b> used to learn vector embeddings for <b>documents</b> (e.g. sentences)</span><br><br>
+
+					<span class="fragment">Creates <b>lots of little classification problems</b> (e.g. use vector from one word to predict next word in sentence) </span><br>
+					<span class="fragment">Embedding vectors are then <b>trained using backpropagation</b> in each iteration </span><br><br>
+					<span class="fragment">Typically <b>very fast to train</b> thanks to multithreading and scales well to large data</span><br>
+
+					</small>
+				</section>
+
+<!-- 				<section data-background="#363534">
+					<h2> NLP with Transactions </h2>
+				</section> -->
+
+				<section>
+					<!-- Show how they're related -->
+					<h3> Sentences vs. Baskets </h3>
+					<small>
+					<ul>
+							<img width=500 data-src="./images/documents.png" style= "border-style: none; box-shadow: none">
+					</ul>
+					<br><br>
+
+					<span class="fragment">NLP algorithms (like doc2vec) assume that you have <b>words (i.e. items) and sentences (i.e. documents)</b></span><br><br>
+
+					<span class="fragment"><b>Products</b> are analogous to words and <b>baskets</b> are analogous to sentences</span><br>
+
+					<span class="fragment">(e.g. A basket can be represented as a vector of product codes or descriptions)</span><br><br>
+
+					</small>
+					<span class="fragment">
+					<pre class="python" ><code data-trim>
+["Rice crispies", "Tomato ketchup", "Peanut butter"]
+</code>
+</pre>
+</span>	
+				</section>
+
+
+ 				<section data-background="#363534">
+					<h2> The result </h2>
+				</section> 
+
+				<section data-background-video="./images/home2vec.mov" data-background-size="100px" data-background-video-loop data-background-repeat="repeat">
+				</section>
+
+				<section data-background-video="./images/vegetarian.mov" data-background-size="100px" data-background-video-loop data-background-repeat="repeat">
+				</section>
+
+				<section data-background-video="./images/easter.mov" data-background-size="100px" data-background-video-loop data-background-repeat="repeat">
+				</section>
+
+				<section>
+					<h3>  </h3>
+
+				</section> 
+
+				<section data-background="#B19B00">
+					<h1> Section 3 </h1>
+				</section>
+
+
+				<section data-background="#E17000">
+					<h1> Thank You </h1>
+					<small>Adam Hornsby (adam.hornsby@dunnhumby.com)</small>
+				</section>
+
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+
+	<script type="text/javascript">
+	
+		$(document).ready(function(){
+			Reveal.addEventListener( 'slidechanged', function( event ) {
+				// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+				var recSlide = event.currentSlide;
+
+				// check if is youtube url is inside slide and save youtubeID, prevent reloading checking videoframe
+				if( ($(recSlide).find('.videoyt').length != 0) && ($(recSlide).find('.videoframe').html()=='') ) {
+					ytid = $(recSlide).find('.videoyt').attr('data-youtube');
+					// replace a.videoyt with video embed code
+					$(recSlide).find('.videoframe').html('<iframe width="640" height="480" src="//www.youtube.com/embed/'+ytid+'?wmode=opaque&amp;rel=0&amp;vq=large" frameborder="0" allowfullscreen></iframe>');
+					// &iv_load_policy=<3></3>
+					// give anchor with videoid a correct link
+					$(recSlide).find('.videoyt').attr('href', '//www.youtube.com/watch?v='+ytid);
+					$(recSlide).find('.videoyt').attr('target', '_blank');
+				}
+			});
+		});
+		
+	</script>
+
+
+		<script>
+
+			// MathJax.Hub.Config({
+			//   tex2jax: {
+			//          inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+			//   }
+			// 	}),
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+				transition: 'linear',
+
+				math: {
+					// mathjax: 'http://cdn.mathjax.org/mathjax/latest/MathJax.js',
+					config: 'TeX-AMS_HTML-full'
+				},
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/math/math.js', async: true },
+					{ src: 'plugin/math/math.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
