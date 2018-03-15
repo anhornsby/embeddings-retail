@@ -1,0 +1,189 @@
+127.0.0.1 - - [14/Mar/2018 19:12:18] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:12:18] "GET /lib/css/zenburn.css HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:12:18] "GET /css/reveal.css HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:12:18] "GET /css/theme/white.css HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:12:18] "GET /css/vampiriser/vampiriser.css HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:12:18] "GET /lib/js/head.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:12:18] "GET /js/reveal.js HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:12:18] "GET /lib/font/source-sans-pro/source-sans-pro.css HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:12:18] "GET /css/print/paper.css HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:12:18] "GET /lib/font/source-sans-pro/source-sans-pro-italic.woff HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:12:18] "GET /lib/font/source-sans-pro/source-sans-pro-regular.woff HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:12:18] "GET /images/dh_logo2.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:12:18] "GET /images/showcase.mov HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:12:18] "GET /plugin/markdown/marked.js HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:12:19] "GET /plugin/markdown/markdown.js HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:12:19] "GET /lib/font/source-sans-pro/source-sans-pro-semibold.woff HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:12:19] "GET /plugin/math/math.js HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:12:19] "GET /plugin/notes/notes.js HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:12:19] "GET /plugin/highlight/highlight.js HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:12:19] "GET /images/map.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:12:19] code 404, message File not found
+127.0.0.1 - - [14/Mar/2018 19:12:19] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [14/Mar/2018 19:12:34] "GET /?**fragments=true** HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:12:56] "GET /?**fragments=true** HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:12:57] "GET /lib/css/zenburn.css HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:12:57] "GET /css/reveal.css HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:12:57] "GET /css/theme/white.css HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:12:57] "GET /css/vampiriser/vampiriser.css HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:12:57] "GET /lib/js/head.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:12:57] "GET /lib/font/source-sans-pro/source-sans-pro.css HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:12:57] "GET /css/print/paper.css HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:12:57] "GET /lib/font/source-sans-pro/source-sans-pro-italic.woff HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:12:57] "GET /lib/font/source-sans-pro/source-sans-pro-regular.woff HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:12:57] "GET /js/reveal.js HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:12:57] "GET /images/dh_logo2.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:12:58] "GET /images/showcase.mov HTTP/1.1" 200 -
+Traceback (most recent call last):
+  File "/usr/local/Cellar/python/2.7.12_2/Frameworks/Python.framework/Versions/2.7/lib/python2.7/SocketServer.py", line 290, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/local/Cellar/python/2.7.12_2/Frameworks/Python.framework/Versions/2.7/lib/python2.7/SocketServer.py", line 318, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/local/Cellar/python/2.7.12_2/Frameworks/Python.framework/Versions/2.7/lib/python2.7/SocketServer.py", line 331, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/Cellar/python/2.7.12_2/Frameworks/Python.framework/Versions/2.7/lib/python2.7/SocketServer.py", line 654, in __init__
+    self.finish()
+  File "/usr/local/Cellar/python/2.7.12_2/Frameworks/Python.framework/Versions/2.7/lib/python2.7/SocketServer.py", line 713, in finish
+    self.wfile.close()
+  File "/usr/local/Cellar/python/2.7.12_2/Frameworks/Python.framework/Versions/2.7/lib/python2.7/socket.py", line 283, in close
+    self.flush()
+  File "/usr/local/Cellar/python/2.7.12_2/Frameworks/Python.framework/Versions/2.7/lib/python2.7/socket.py", line 307, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+127.0.0.1 - - [14/Mar/2018 19:12:58] "GET /plugin/markdown/marked.js HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:12:58] "GET /plugin/markdown/markdown.js HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:12:59] "GET /lib/font/source-sans-pro/source-sans-pro-semibold.woff HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:12:59] "GET /plugin/math/math.js HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:12:59] "GET /plugin/notes/notes.js HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:12:59] "GET /plugin/highlight/highlight.js HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:12:59] "GET /images/map.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:13:20] code 404, message File not found
+127.0.0.1 - - [14/Mar/2018 19:13:20] "GET /index_lightweight.html/?**fragments=true** HTTP/1.1" 404 -
+127.0.0.1 - - [14/Mar/2018 19:13:27] "GET /index_lightweight.html HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:14:40] code 404, message File not found
+127.0.0.1 - - [14/Mar/2018 19:14:40] "GET /index_lightweight.html/?**?fragments=false** HTTP/1.1" 404 -
+127.0.0.1 - - [14/Mar/2018 19:14:44] "GET /index_lightweight.html?**?fragments=false** HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:15:04] "GET /index_lightweight.html?**?fragments=false** HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:15:04] "GET /lib/css/zenburn.css HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:15:05] "GET /css/reveal.css HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:15:05] "GET /css/theme/white.css HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:15:05] "GET /css/vampiriser/vampiriser.css HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:15:05] "GET /lib/js/head.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:15:05] "GET /js/reveal.js HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:15:05] "GET /lib/font/source-sans-pro/source-sans-pro.css HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:15:05] "GET /css/print/paper.css HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:15:05] "GET /lib/font/source-sans-pro/source-sans-pro-italic.woff HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:15:05] "GET /lib/font/source-sans-pro/source-sans-pro-regular.woff HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:15:05] "GET /images/dh_logo2.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:15:05] "GET /plugin/markdown/marked.js HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:15:05] "GET /plugin/markdown/markdown.js HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:15:06] "GET /lib/font/source-sans-pro/source-sans-pro-semibold.woff HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:15:06] "GET /plugin/math/math.js HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:15:06] "GET /plugin/notes/notes.js HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:15:06] "GET /plugin/highlight/highlight.js HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:15:06] "GET /images/map.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:15:11] "GET /images/cat.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:15:11] "GET /images/dog.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:15:12] "GET /images/onehotencode.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:15:15] "GET /images/embedding.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:15:16] "GET /images/word2vec.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:15:17] "GET /images/documents.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:15:20] "GET /images/source.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:15:22] "GET /images/homess.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:15:24] "GET /images/easterss.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:15:25] "GET /images/vegss.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:15:27] "GET /images/basketss.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:15:28] "GET /images/king.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:15:33] "GET /images/showcasess.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:15:34] "GET /images/choice.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:16:18] code 404, message File not found
+127.0.0.1 - - [14/Mar/2018 19:16:18] "GET /index_lightweight.html/?fragments=false HTTP/1.1" 404 -
+127.0.0.1 - - [14/Mar/2018 19:16:21] code 404, message File not found
+127.0.0.1 - - [14/Mar/2018 19:16:21] "GET /index_lightweight.html/?fragments=true HTTP/1.1" 404 -
+127.0.0.1 - - [14/Mar/2018 19:16:25] "GET /index_lightweight.html?fragments=true HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:16:45] "GET /index_lightweight.html?fragments=true HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:16:45] "GET /lib/css/zenburn.css HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:16:45] "GET /css/reveal.css HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:16:45] "GET /css/theme/white.css HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:16:45] "GET /css/vampiriser/vampiriser.css HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:16:45] "GET /lib/js/head.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:16:45] "GET /js/reveal.js HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:16:45] "GET /lib/font/source-sans-pro/source-sans-pro.css HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:16:46] "GET /css/print/paper.css HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:16:46] "GET /lib/font/source-sans-pro/source-sans-pro-italic.woff HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:16:46] "GET /lib/font/source-sans-pro/source-sans-pro-regular.woff HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:16:46] "GET /images/dh_logo2.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:16:46] "GET /plugin/markdown/marked.js HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:16:46] "GET /plugin/markdown/markdown.js HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:16:46] "GET /lib/font/source-sans-pro/source-sans-pro-semibold.woff HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:16:46] "GET /plugin/math/math.js HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:16:46] "GET /plugin/notes/notes.js HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:16:46] "GET /plugin/highlight/highlight.js HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:16:46] "GET /images/map.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:16:56] "GET /images/cat.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:16:56] "GET /images/dog.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:17:04] "GET /images/onehotencode.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:17:13] "GET /images/embedding.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:17:20] "GET /images/word2vec.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:17:21] "GET /images/documents.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:17:36] "GET /images/source.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:17:45] "GET /images/homess.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:17:55] "GET /images/easterss.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:17:56] "GET /images/vegss.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:17:58] "GET /images/basketss.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:17:59] "GET /images/king.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:18:13] "GET /images/showcasess.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:18:18] "GET /images/choice.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:21:01] "GET /index_lightweight.html?fragments=true HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:21:01] "GET /lib/css/zenburn.css HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:21:01] "GET /css/reveal.css HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:21:01] "GET /css/theme/white.css HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:21:01] "GET /css/vampiriser/vampiriser.css HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:21:01] "GET /lib/js/head.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:21:01] "GET /js/reveal.js HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:21:02] "GET /lib/font/source-sans-pro/source-sans-pro.css HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:21:02] "GET /css/print/paper.css HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:21:02] "GET /lib/font/source-sans-pro/source-sans-pro-italic.woff HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:21:02] "GET /lib/font/source-sans-pro/source-sans-pro-regular.woff HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:21:02] "GET /images/dh_logo2.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:21:02] "GET /plugin/markdown/marked.js HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:21:02] "GET /plugin/markdown/markdown.js HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:21:02] "GET /lib/font/source-sans-pro/source-sans-pro-semibold.woff HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:21:02] "GET /plugin/math/math.js HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:21:02] "GET /plugin/notes/notes.js HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:21:02] "GET /plugin/highlight/highlight.js HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:21:03] "GET /images/map.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:21:12] "GET /images/cat.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:21:13] "GET /images/dog.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:21:20] "GET /images/onehotencode.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:21:30] "GET /images/embedding.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:21:37] "GET /images/word2vec.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:21:37] "GET /images/documents.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:21:53] "GET /images/source.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:22:02] "GET /images/homess.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:22:12] "GET /images/easterss.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:22:13] "GET /images/vegss.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:22:14] "GET /images/basketss.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:22:15] "GET /images/king.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:22:30] "GET /images/showcasess.png HTTP/1.1" 200 -
+127.0.0.1 - - [14/Mar/2018 19:22:34] "GET /images/choice.png HTTP/1.1" 200 -
+127.0.0.1 - - [15/Mar/2018 08:55:08] "GET /index_lightweight.html?fragments=true HTTP/1.1" 200 -
+127.0.0.1 - - [15/Mar/2018 08:55:09] "GET /lib/css/zenburn.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Mar/2018 08:55:09] "GET /css/theme/white.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Mar/2018 08:55:09] "GET /css/reveal.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Mar/2018 08:55:09] "GET /css/vampiriser/vampiriser.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Mar/2018 08:55:09] "GET /lib/js/head.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Mar/2018 08:55:09] "GET /lib/font/source-sans-pro/source-sans-pro.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Mar/2018 08:55:09] "GET /css/print/paper.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Mar/2018 08:55:09] "GET /lib/font/source-sans-pro/source-sans-pro-italic.woff HTTP/1.1" 200 -
+127.0.0.1 - - [15/Mar/2018 08:55:09] "GET /lib/font/source-sans-pro/source-sans-pro-regular.woff HTTP/1.1" 200 -
+127.0.0.1 - - [15/Mar/2018 08:55:09] "GET /js/reveal.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Mar/2018 08:55:09] "GET /images/dh_logo2.png HTTP/1.1" 200 -
+127.0.0.1 - - [15/Mar/2018 08:55:10] "GET /plugin/markdown/marked.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Mar/2018 08:55:10] "GET /plugin/markdown/markdown.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Mar/2018 08:55:10] "GET /lib/font/source-sans-pro/source-sans-pro-semibold.woff HTTP/1.1" 200 -
+127.0.0.1 - - [15/Mar/2018 08:55:10] "GET /plugin/math/math.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Mar/2018 08:55:10] "GET /plugin/notes/notes.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Mar/2018 08:55:10] "GET /plugin/highlight/highlight.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Mar/2018 08:55:10] "GET /images/map.png HTTP/1.1" 200 -
+127.0.0.1 - - [15/Mar/2018 08:55:50] "GET /index_lightweight.html?fragments=true HTTP/1.1" 200 -

@@ -172,7 +172,7 @@ King-Queen vectors - http://signaldatascience.com/projects/oliviaschaefer/
 					<h3> Embeddings are dense representations </h3>
 					<small>
 					<ul>
-							<img width=700 data-src="./images/embedding.png" style= "border-style: none; box-shadow: none">
+							<img width=600 data-src="./images/embedding.png" style= "border-style: none; box-shadow: none">
 					</ul>
 					<br>
 
@@ -181,9 +181,9 @@ King-Queen vectors - http://signaldatascience.com/projects/oliviaschaefer/
 
 					<span class="fragment">Typically learnt with <b>neural networks</b></span><br><br>
 
-					<span class="fragment">When learned well, produce <b>similar vectors for similar items</b> (e.g. cats vs. dogs)</span>
+					<span class="fragment">When learned well, produce <b>similar vectors for similar items</b> (e.g. cats vs. dogs)</span><br><br>
 
-<!-- 					<span class="fragment"><a href="https://deeplearning4j.org/thoughtvectors">Geoff Hinton</a> has argued that <b>all thoughts can be represented</b> with embedding vectors</span><br><br> -->
+					<span class="fragment"><a href="https://deeplearning4j.org/thoughtvectors">Geoff Hinton</a> has argued that <b>all thoughts can be represented</b> with embedding vectors</span><br><br>
 
 
 					</small>
@@ -198,10 +198,10 @@ King-Queen vectors - http://signaldatascience.com/projects/oliviaschaefer/
 					<br><br>
 
 					<span class="fragment">A set of <b>unsupervised learning</b> algorithms that learn vector embeddings (Mikolov et al.)</span><br><br>
-					<span class="fragment"><b>word2vec</b> used to learn vector embeddings for <b>items</b> (e.g. words or products)</span><br>
-					<span class="fragment"><b>doc2vec</b> used to learn vector embeddings for <b>documents</b> (e.g. sentences, baskets, customers etc.)</span><br><br>
+					<span class="fragment"><b>word2vec</b> used to learn vector embeddings for <b>words</b></span><br>
+					<span class="fragment"><b>doc2vec</b> used to learn vector embeddings for <b>documents</b> (e.g. sentences)</span><br><br>
 
-					<span class="fragment">Create <b>lots of little classification problems</b> (e.g. use vector of one item to predict next item in document, then backprop) </span><br>
+					<span class="fragment">Create <b>lots of little classification problems</b> (e.g. use vector from one word to predict next word in sentence, then backprop) </span><br>
 <!-- 					<span class="fragment">Embedding vectors are then <b>trained using backpropagation</b> in each iteration </span><br><br> -->
 					<span class="fragment">Typically <b>very fast to train</b> and scale well to large data</span><br>
 
@@ -220,19 +220,18 @@ King-Queen vectors - http://signaldatascience.com/projects/oliviaschaefer/
 					<span class="fragment">NLP algorithms (like doc2vec) assume that you have <b>words (i.e. items) and sentences (i.e. documents)</b></span><br><br>
 
 					<span class="fragment"><b>Products</b> are analogous to words and <b>baskets/customers</b> are analogous to sentences</span><br>
-					<span class="fragment">(e.g. A basket is represented with product codes)</span><br><br>
-					<span class="fragment">This data is a <b>neat place to test NLP algorithms</b> (e.g. no order, "stop words" and arguably more natural)</span>
+					<span class="fragment">This data is a <b>neat place to test NLP algorithms</b> (e.g. no order, "stop words" and arguably more natural)</span><br><br>
 
-					
+					<span class="fragment">e.g. A basket can be represented as a vector of product codes or descriptions</span><br>
 
 					</small>
-<!-- 					<span class="fragment">
+					<span class="fragment">
 					<pre class="python" ><code data-trim>
 ["Rice crispies", "Tomato ketchup", "Peanut butter"]
 </code>
 </pre>
 					
-</span>	 -->
+</span>	
 				
 				</section>
 
@@ -259,7 +258,7 @@ King-Queen vectors - http://signaldatascience.com/projects/oliviaschaefer/
 					<br><br>
 
 					<span class="fragment">Trained on Google Cloud Platform Compute Engine (4 vCPUs and 15GB memory) in (~5 minutes per experiment)</span><br>
-					<span class="fragment">Model solutions evaluated using Tensorflow's amazing <a href="https://github.com/tensorflow/embedding-projector-standalone">Embedding Projector</a></span>
+					<span class="fragment">Model solutions evaluated using Tensorflow's amazing <a href="https://github.com/tensorflow/embedding-projector-standalone">Embedding Explorer</a></span>
 
 				</small>
 
@@ -269,16 +268,16 @@ King-Queen vectors - http://signaldatascience.com/projects/oliviaschaefer/
 					<h1> Evaluation </h1>
 				</section>
 
-				<section data-background-video="./images/home2vec.mov" data-background-size="100px" data-background-video-loop data-background-repeat="repeat">
+				<section data-background-image="./images/homess.png">
 				</section>
 
-				<section data-background-video="./images/easter.mov" data-background-size="100px" data-background-video-loop data-background-repeat="repeat">
+				<section data-background-image="./images/easterss.png">
 				</section>
 
-				<section data-background-video="./images/vegetarian.mov" data-background-size="100px" data-background-video-loop data-background-repeat="repeat">
+				<section data-background-image="./images/vegss.png">
 				</section>
 
-				<section data-background-video="./images/basket.mov" data-background-size="100px" data-background-video-loop data-background-repeat="repeat">
+				<section data-background-image="./images/basketss.png">
 				</section>
 
 				<section>
@@ -405,7 +404,8 @@ King-Queen vectors - http://signaldatascience.com/projects/oliviaschaefer/
 				<section>
 					<h3>The model looks great</h3>
 					<!-- <br> -->
-					<video loop data-autoplay src="./images/showcase.mov" width=600></video><br>
+					<!-- <video loop data-autoplay src="./images/showcase.mov" width=600></video><br> -->
+					<img width=600 data-src="./images/showcasess.png" style= "border-style: none; box-shadow: none"><br>
 					<small>
 						<br>
 						<span class="fragment">+ Very <b>visual</b> application of machine learning in retail</span><br>
@@ -415,8 +415,8 @@ King-Queen vectors - http://signaldatascience.com/projects/oliviaschaefer/
 
 					<span class="fragment">- Harder with <b>very low velocity</b> items</span><br>
 					<span class="fragment">- Need some more <b>automated</b> ways of <b>evaluating</b> the model</span><br>
-<!-- 					<span class="fragment">- Need <b>less homogenous</b> way of representing baskets & customers</span><br>
-					<span class="fragment">- <b>Interpretation of "similar"</b> is slightly unusual (neither comps nor subs)</span><br> -->
+					<span class="fragment">- Need <b>less homogenous</b> way of representing baskets & customers</span><br>
+					<span class="fragment">- <b>Interpretation of "similar"</b> is slightly unusual (neither comps nor subs)</span><br>
 
 				    </small>
 
