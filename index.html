@@ -114,7 +114,7 @@ King-Queen vectors - http://signaldatascience.com/projects/oliviaschaefer/
 						<span class="fragment"><li>Why <b>item similarity</b> is so important in retail science</li></span>
 						<span class="fragment"><li>What are <b>embeddings</b>?</li></span>
 						<span class="fragment"><li>How can <b>2vec</b> algorithms help?</li></span>
-						<span class="fragment"><li>Conclusions</li></span><br><br>
+						<span class="fragment"><li>Results & conclusions</li></span><br><br>
 
 						<span class="fragment">(Massive thanks to <a href='https://www.linkedin.com/in/joshua-cooper-07b72953/'>Josh Cooper</a> for doing lots of the thinking in this presentation)</span>
 					</ol>
@@ -398,6 +398,39 @@ King-Queen vectors - http://signaldatascience.com/projects/oliviaschaefer/
 				</small>
 				</section>
 
+				<section data-background="#E17000">
+					<h1>Applications</h1>
+				</section>
+
+				<!-- Modelling results -->
+
+				<section>
+
+					<h2>Hands-free learning</h2>
+
+					<img width=400 data-src="./images/free.jpg" style= "border-style: none; box-shadow: none">
+
+					<small>
+					<span class="fragment">We can use the trained document vectors to <b>automatically generate modelling features</b> at the customer-level</span><br>
+					<span class="fragment">We can then <b>grid-search to find the best configuration</b> for predicting a target variable<br>
+					<br>
+	<!-- 				<span class="fragment">e.g. Learn <b>document vectors for customers</b> and use these to predict things using Logistic Regression</span><br><br> -->
+					<span class="fragment"><b>How well does this work?</b></span><br>
+					<br>
+
+					<span class="fragment">A <b>sparse</b> dataset predicting <b>coupon redemptions</b> had <b>accuracy (AUC) 0.74</b></span><br>
+					<span class="fragment">A model using <b>customer embeddings</b> had <b>accuracy (AUC) of 0.85</b></span><br><br>
+
+					<span class="fragment">Also demonstrated predictive power with <b>demographics</b> such as <b>age</b> and <b>number of kids</b></span><br><br>
+
+<!-- 					<span class="fragment"><b>Kids (Y/N)</b>: Customer embeddings predict with <b>accuracy (AUC) of 0.70</b> (TBC)</span><br>
+					<span class="fragment"><b>Age (&plusmn;45)</b>: Customer embeddings predict with <b>accuracy (AUC) of 0.70</b> (TBC)</span><br><br> -->
+
+
+
+				</small>
+				</section>
+
 				<section data-background="#009B74">
 					<h1>Conclusions</h1>
 				</section>
@@ -408,13 +441,13 @@ King-Queen vectors - http://signaldatascience.com/projects/oliviaschaefer/
 					<video loop data-autoplay src="./images/showcase.mov" width=600></video><br>
 					<small>
 						<br>
-						<span class="fragment">+ Very <b>visual</b> application of machine learning in retail</span><br>
-					<span class="fragment">+ The model appears to <b>understand product similarity</b> well</span><br>
-					<span class="fragment">+ <b>Analogical reasoning</b> results seem intuitive</span><br>
-					<span class="fragment">+ <b>Scales</b> better than rival algorithms (e.g. NMF)</span><br><br>
+						<span class="fragment">Very <b>visual</b> application of machine learning in retail</span><br>
+					<span class="fragment">The model appears to <b>understand product similarity</b> well</span><br>
+					<span class="fragment"><b>Analogical reasoning</b> results seem intuitive</span><br>
+					<span class="fragment"><b>Scales</b> better than rival algorithms (e.g. NMF)</span><br><br>
 
-					<span class="fragment">- Harder with <b>very low velocity</b> items</span><br>
-					<span class="fragment">- Need some more <b>automated</b> ways of <b>evaluating</b> the model</span><br>
+					<span class="fragment">Harder with <b>very low velocity</b> items</span><br>
+					<span class="fragment">Need some more <b>automated</b> ways of <b>evaluating</b> the model</span><br>
 <!-- 					<span class="fragment">- Need <b>less homogenous</b> way of representing baskets & customers</span><br>
 					<span class="fragment">- <b>Interpretation of "similar"</b> is slightly unusual (neither comps nor subs)</span><br> -->
 
@@ -446,7 +479,8 @@ King-Queen vectors - http://signaldatascience.com/projects/oliviaschaefer/
 				<section  data-background="#363534">
 					<h1> Thank You </h1>
 					<small>@adamnhornsby <br>
-						adam.hornsby@dunnhumby.com<br><br>
+<!-- 						adam.hornsby@dunnhumby.com -->
+	<br>
 
 
 					<b>dunnhumby.com/careers</b>
