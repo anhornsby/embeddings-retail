@@ -187,3 +187,4 @@ error: [Errno 32] Broken pipe
 127.0.0.1 - - [15/Mar/2018 08:55:10] "GET /plugin/highlight/highlight.js HTTP/1.1" 200 -
 127.0.0.1 - - [15/Mar/2018 08:55:10] "GET /images/map.png HTTP/1.1" 200 -
 127.0.0.1 - - [15/Mar/2018 08:55:50] "GET /index_lightweight.html?fragments=true HTTP/1.1" 200 -
+/usr/local/Cellar/python/2.7.12_2/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python: can't open file 'SimpleHTTPServer.py': [Errno 2] No such file or directory
